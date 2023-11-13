@@ -11,7 +11,7 @@ const inputNumber = document.querySelector("input");
 // функція додавання елементів
 const createElement = (n) => {
   const arrayhildren = [...box.children];
-  arrayhildren.forEach((value) => value.remove());
+  if (arrayhildren.length > 0) arrayhildren.forEach((value) => value.remove());
   let widthH = 30;
   let heightH = 30;
   for (let i = 1; i <= n; i += 1) {
