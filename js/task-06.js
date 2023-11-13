@@ -30,7 +30,7 @@ const destroyElement = () => {
   arrayhildren.forEach((value) => value.remove());
 };
 // перевірка і виконання дій
-inputNumber.addEventListener("change", () => {
+inputNumber.addEventListener("blur", () => {
   let number = 0;
   number = inputNumber.value;
   if (number >= 1 && number <= 100) {
