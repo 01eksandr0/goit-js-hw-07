@@ -16,15 +16,12 @@ const images = [
 const taskTwo = {
   listImg: document.querySelector(".gallery"),
   addImg: (arr) => {
+    const list = [];
     arr.forEach((value) => {
-      const liElement = document.createElement("li");
-      const imgElement = document.createElement("img");
-      imgElement.src = value.url;
-      imgElement.alt = value.alt;
-      imgElement.classList.add("img-style");
-      liElement.append(imgElement);
-      taskTwo.listImg.append(liElement);
+      const liElement = `<li><img src="${value.url}" alt="${value.alt}" width='140' height='160'></li>`;
+      list.push(liElement);
     });
+    taskTwo.listImg.insertAdjacentHTML("afterbegin", list.join(" "));
   },
 };
 taskTwo.addImg(images);

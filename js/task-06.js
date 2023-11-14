@@ -14,14 +14,14 @@ const createElement = (n) => {
   if (arrayhildren.length > 0) arrayhildren.forEach((value) => value.remove());
   let widthH = 30;
   let heightH = 30;
+  const arr = [];
   for (let i = 1; i <= n; i += 1) {
-    box.insertAdjacentHTML(
-      "afterbegin",
-      `<div style="width: ${widthH}px; height: ${heightH}px; background-color:${getRandomHexColor()}"></div>`
-    );
+    const newElement = `<div style="width: ${widthH}px; height: ${heightH}px; background-color:${getRandomHexColor()}"></div>`;
+    arr.push(newElement);
     widthH += 10;
     heightH += 10;
   }
+  box.insertAdjacentHTML("afterbegin", arr.join(" "));
   inputNumber.value = "";
 };
 // функція видалення елементів
