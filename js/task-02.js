@@ -16,10 +16,8 @@ const images = [
 const taskTwo = {
   listImg: document.querySelector(".gallery"),
   addImg: (arr) => {
-    const list = [];
-    arr.forEach((value) => {
-      const liElement = `<li><img src="${value.url}" alt="${value.alt}" width='140' height='160'></li>`;
-      list.push(liElement);
+    const list = arr.map((value) => {
+      return `<li><img src="${value.url}" alt="${value.alt}" width='140' height='160'></li>`;
     });
     taskTwo.listImg.insertAdjacentHTML("afterbegin", list.join(" "));
   },
